@@ -1,4 +1,5 @@
 package com.filmlist;
+import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -45,4 +46,13 @@ public class MainActivity extends ReactActivity {
       return BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     }
   }
+
+  /**
+  react-native-screens package requires one additional configuration step to properly work on Android devices.
+  This change is required to avoid crashes related to View state being not persisted consistently across Activity restarts.
+   */
+   @Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
 }
