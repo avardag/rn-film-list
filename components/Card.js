@@ -23,9 +23,11 @@ const styles = StyleSheet.create({
     bottom: 20,
   },
 });
-export default function Card({movie}) {
+export default function Card({movie, navigation}) {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate('Details', {movie})}>
       <Image
         style={styles.image}
         source={

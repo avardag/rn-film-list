@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     display: 'none',
   },
 });
-export default function Home() {
+export default function Home({navigation}) {
   const [popularMovies, setPopularMovies] = useState([]);
   const [popularTV, setPopularTV] = useState([]);
   const [familyMovies, setFamilyMovies] = useState([]);
@@ -72,19 +72,31 @@ export default function Home() {
 
           {popularMovies.length > 0 && (
             <View style={styles.container}>
-              <List title="Popular Films" content={popularMovies} />
+              <List
+                title="Popular Films"
+                content={popularMovies}
+                navigation={navigation}
+              />
             </View>
           )}
 
           {popularTV.length > 0 && (
             <View style={styles.container}>
-              <List title="Popular TV Shows" content={popularTV} />
+              <List
+                title="Popular TV Shows"
+                content={popularTV}
+                navigation={navigation}
+              />
             </View>
           )}
 
           {familyMovies.length > 0 && (
             <View style={styles.container}>
-              <List title="Family Movies" content={familyMovies} />
+              <List
+                title="Family Movies"
+                content={familyMovies}
+                navigation={navigation}
+              />
             </View>
           )}
         </ScrollView>

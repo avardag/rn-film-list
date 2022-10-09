@@ -23,3 +23,23 @@ export async function getFamilyMovies() {
 
   return resp.data.results;
 }
+
+/**
+ *
+ * @param {Number} movieId
+ * @returns
+ */
+export async function getMovieDetails(movieId) {
+  console.log(
+    '🚀 ~ file: api.js ~ line 33 ~ getMovieDetails ~ movieId',
+    movieId,
+  );
+  try {
+    const resp = await axios.get(
+      `${apiUrl}/movie/${movieId}?api_key=${REACT_APP_API_KEY}`,
+    );
+    return resp.data;
+  } catch (error) {
+    console.log('🚀 ~ file: api.js ~ line 43 ~ getMovieDetails ~ error', error);
+  }
+}

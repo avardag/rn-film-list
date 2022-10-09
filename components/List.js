@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function List({title, content}) {
+export default function List({title, content, navigation}) {
   const renderItem = ({item}) => <Text>aaa</Text>;
 
   return (
@@ -24,7 +24,7 @@ export default function List({title, content}) {
       <View>
         <FlatList
           data={content}
-          renderItem={({item}) => <Card movie={item} />}
+          renderItem={({item}) => <Card movie={item} navigation={navigation} />}
           horizontal
         />
       </View>
